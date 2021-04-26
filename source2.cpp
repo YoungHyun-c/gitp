@@ -1,8 +1,16 @@
 #include <stdio.h>
 #include <string>
 
+
 using namespace std;
 
+int rand_int(int a, int b) {
+	int ret = 0;
+	int temp_1 = rand();
+	int temp_2 = b - a + 1;
+	ret = a + (temp_1 % temp_2);
+	return ret;
+}
 int main() {
 	//while (1) {
 	int don = 10000;
@@ -31,5 +39,19 @@ int main() {
 	scanf_s("%d", &betingmar);
 	printf("배팅할 금액을 입력하세요 : ");
 	scanf_s("%d", &betting);
+
+	printf("그럼 경기를 시작해볼까요? ^^ \n");
+	printf("**************************************************************\n");
+
+	int woon;
+	int m = 0;
+
+	
+	while (m < 50)
+	{
+		woon = rand_int(1, 100);
+		printf("%d : %d\n",m+1,woon);
+		m = m + 1;
+	}
 	//}
 }
