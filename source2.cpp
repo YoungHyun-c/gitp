@@ -31,5 +31,6 @@ int main() {
 	scanf_s("%d", &betingmar);
 	printf("배팅할 금액을 입력하세요 : ");
 	scanf_s("%d", &betting);
+	//easter egg ★
 	//}
 }
