@@ -43,6 +43,7 @@ int main() {
 			int mar[5] = { 0 };
 			int m = 0;
 			while (1) {
+				//이스터에그 추가
 				printf("베팅할 말을 선택하세요(1~5) : ");
 				scanf_s("%d", &betingmar);
 				if (betingmar >= 1 && betingmar <= 5) {
