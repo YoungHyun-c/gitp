@@ -42,19 +42,38 @@ int main() {
 
 			int mar[5] = { 0 };
 			int m = 0;
-
-			printf("베팅할 말을 선택하세요(1~5) : ");
-			scanf_s("%d", &betingmar);
-
+			while (1) {
+				printf("베팅할 말을 선택하세요(1~5) : ");
+				scanf_s("%d", &betingmar);
+				if (betingmar >= 1 && betingmar <= 5) {
+					break;
+				}
+				else {
+					printf("배팅할 말 선택이 잘못되었습니다. 다시 입력바랍니다.\n");
+				}
+			}
 			printf("배팅할 금액을 입력하세요 (현재 : %d원) : ", don);
 			scanf_s("%d", &beting);
+			printf("\n");
+
+			if (beting == 0) {
+				system("cls");
+				Sleep(100);
+				printf("인생은 초기화 되지않아요~ ^^ \n");
+				break;
+			}
+			if (beting > don) {
+				system("cls");
+				Sleep(100);
+				printf("소지한 돈 만큼만 배팅바랍니다 ^^ \n\n");
+				break;
+			}
 
 			don = don - beting;
 			printf("그럼 경기를 시작해볼까요? ^^ \n");
 			printf("**************************************************************\n");
 
 			int woon;
-
 
 			while (m < 40)
 			{
