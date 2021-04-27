@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string>
-
+#include <cstdlib>
+#include <iostream>
 
 using namespace std;
 
@@ -35,6 +36,7 @@ int main() {
 	printf("5번마 - 당나귀     (30배)등급 ★\n");
 	printf("**************************************************************\n");
 
+	int mar[5] = { 0 };
 	printf("베팅할 말을 선택하세요(1~5) : ");
 	scanf_s("%d", &betingmar);
 	printf("배팅할 금액을 입력하세요 : ");
@@ -50,8 +52,47 @@ int main() {
 	while (m < 50)
 	{
 		woon = rand_int(1, 100);
-		printf("%d : %d\n",m+1,woon);
-		m = m + 1;
+		if (woon >= 76) {
+			mar[0] = mar[0]++;
+			m = m + 1;
+		}
+		else if (woon >= 54) {
+			mar[1] = mar[1]++;
+			m = m + 1;
+		}
+		else if (woon >= 34) {
+			mar[2] = mar[2]++;
+			m = m + 1;
+		}
+		else if (woon >= 16) {
+			mar[3] = mar[3]++;
+			m = m + 1;
+		}
+		else if (woon >= 1) {
+			mar[4] = mar[4]++;
+			m = m + 1;
+		}
+		string jindo[5];
+		int i, j;
+		for (i = 0; i < 5; i++) {
+			for (j = 0; j<mar[i]; j++){
+				jindo[i] += "*";
+				if (mar[i] == m) {
+					winmar = i + 1;
+				}
+			}
+		}
+		//cout << "1번마 : *" << jindo[0] << "\n";
+		//printf("%d : %d\n",m,woon);
+		//m = m + 1;
+		printf("게임 현황\n");
+		printf("=================================================\n");
+		cout << "1번마 : *" << jindo[0] << "\n";
+		cout << "2번마 : *" << jindo[1] << "\n";
+		cout << "3번마 : *" << jindo[2] << "\n";
+		cout << "4번마 : *" << jindo[3] << "\n";
+		cout << "5번마 : *" << jindo[4] << "\n";
+		printf("=================================================\n");
 	}
 	//}
 }
